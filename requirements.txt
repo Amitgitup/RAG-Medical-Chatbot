@@ -1,0 +1,9 @@
+langchain>=0.1.0
+langchain_community>=0.0.20
+langchain_huggingface>=0.0.1
+langchain_groq>=0.0.1
+faiss-cpu
+pypdf
+huggingface_hub>=0.20.0
+flask
+python-dotenv
