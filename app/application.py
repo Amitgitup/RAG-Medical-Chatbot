@@ -76,10 +76,10 @@ def index():
                     "timestamp": datetime.now().strftime("%H:%M")
                 })
                 session["messages"] = messages
-                return render_template("index1.html", messages=session["messages"], error=error_msg)
+                return render_template("index.html", messages=session["messages"], error=error_msg)
             
         return redirect(url_for("index"))
-    return render_template("index1.html", messages=session.get("messages", []))
+    return render_template("index.html", messages=session.get("messages", []))
 
 @app.route("/clear")
 def clear():
