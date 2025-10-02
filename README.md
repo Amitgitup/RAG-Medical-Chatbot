@@ -65,7 +65,7 @@ The Medical RAG Chatbot is a state-of-the-art medical question-answering system 
 ## 🛠 **Technology Stack**
 
 ### **Backend Technologies**
-- **🐍 Python 3.8+** - Core programming language
+- **🐍 Python 3.10** - Core programming language
 - **🌶️ Flask** - Modern web framework
 - **🔗 LangChain** - RAG framework and orchestration
 - **🤗 HuggingFace** - Transformer models and embeddings
@@ -125,7 +125,7 @@ Medical RAG Chatbot/
 ## 🚀 **Quick Start**
 
 ### **Prerequisites**
-- Python 3.8 or higher
+- Python 3.10 
 - Git
 - Internet connection for model downloads
 
@@ -174,7 +174,7 @@ Medical RAG Chatbot/
 
 6. **🚀 Launch the application**
    ```bash
-   python app.py
+   python app/application.py
    ```
 
 7. **🌐 Open your browser**
@@ -276,7 +276,7 @@ curl -X POST http://localhost:5000/api/chat \
 ### **Development Mode**
 ```bash
 export FLASK_DEBUG=True
-python app.py
+python app/application.py
 ```
 
 ### **Adding New Documents**
@@ -355,7 +355,7 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 
 ### **Docker Deployment**
 ```dockerfile
-FROM python:3.9-slim
+FROM python:3.10-slim
 
 WORKDIR /app
 COPY requirements.txt .
