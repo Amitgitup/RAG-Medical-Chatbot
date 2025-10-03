@@ -64,26 +64,48 @@ The Medical RAG Chatbot is a state-of-the-art medical question-answering system 
 
 ## 🛠 **Technology Stack**
 
-### **Backend Technologies**
+### **Current Backend Technologies**
 - **🐍 Python 3.10** - Core programming language
 - **🌶️ Flask** - Modern web framework
 - **🔗 LangChain** - RAG framework and orchestration
 - **🤗 HuggingFace** - Transformer models and embeddings
-- **⚡ Groq** - Ultra-fast LLM inference
+- **⚡ Groq** - Ultra-fast LLM inference (Current)
 - **🔍 FAISS** - Vector similarity search
 
-### **Frontend Technologies**
+### **Current Frontend Technologies**
 - **📱 Bootstrap 5.3.2** - Responsive UI framework
 - **🎨 Custom CSS** - Medical-themed styling with animations
 - **⚡ Modern JavaScript** - ES6+ with advanced features
 - **🎭 Font Awesome 6.4** - Beautiful medical icons
 - **🔤 Google Fonts** - Professional Inter typography
 
-### **AI/ML Components**
+### **Current AI/ML Components**
 - **🧠 LLM**: Llama 3.1 8B Instant (via Groq)
 - **🔤 Embeddings**: sentence-transformers/all-MiniLM-L6-v2
 - **📚 Knowledge Base**: Gale Encyclopedia of Medicine
 - **🔍 Vector Store**: FAISS with AVX2 optimization
+
+### **Planned Technology Upgrades**
+
+#### **AI/ML Enhancements**
+- **🧠 LLM**: OpenAI GPT-4 (Planned)
+- **🔤 Embeddings**: sentence-transformers/embeddinggemma-300m-medical (Planned)
+- **🔍 Advanced Search**: Elasticsearch integration (Planned)
+- **🧠 RAG**: Hybrid search with re-ranking (Planned)
+
+#### **Frontend Modernization**
+- **⚛️ React.js** - Component-based frontend (Planned)
+- **🟢 Node.js + Express.js** - RESTful API backend (Planned)
+- **🎨 Material-UI/Ant Design** - Modern component library (Planned)
+- **📱 Progressive Web App** - Enhanced mobile experience (Planned)
+
+#### **DevOps & Infrastructure**
+- **🐳 Docker** - Containerization
+- **🔄 Jenkins** - CI/CD pipeline
+- **☁️ AWS ECR** - Container registry
+- **☁️ AWS Runner** - Deployment platform
+- **🔒 Aqua Trivy** - Security scanning
+- **📊 Monitoring** - APM and observability (Planned)
 
 ---
 
@@ -342,30 +364,41 @@ kill -9 <PID>
 
 ---
 
-## 🚀 **Deployment**
+## 🚀 **CI/CD Implementation with Jenkins**
 
-### **Production Deployment**
-```bash
-# Install production server
-pip install gunicorn
+### **Implemented DevOps Pipeline**
 
-# Run with Gunicorn
-gunicorn -w 4 -b 0.0.0.0:5000 app:app
-```
+This project implements a comprehensive LLMOps pipeline using Jenkins for continuous integration and deployment:
 
-### **Docker Deployment**
-```dockerfile
-FROM python:3.10-slim
+#### **🔗 GitHub Integration with Jenkins**
+- **Automated Webhook Triggers**: Jenkins is integrated with GitHub repository for automatic builds
+- **Source Code Management**: Direct integration with GitHub for seamless code synchronization
+- **Branch-based Builds**: Automated builds triggered on code commits and pull requests
 
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install -r requirements.txt
+#### **🔒 Security Scanning with Aqua Trivy**
+- **Container Security Analysis**: Aqua Trivy is integrated into the pipeline for comprehensive security scanning
+- **Vulnerability Detection**: Automated scanning of Docker images for security vulnerabilities
+- **Dependency Analysis**: Continuous monitoring of application dependencies for security issues
+- **Compliance Checking**: Ensures adherence to security best practices and compliance standards
 
-COPY . .
-EXPOSE 5000
+#### **☁️ AWS Elastic Container Registry (ECR)**
+- **Container Storage**: Docker images are automatically pushed to AWS ECR after successful builds
+- **Version Management**: Automated tagging and versioning of container images
+- **Secure Registry**: Leveraging AWS ECR for secure and scalable container image storage
+- **Image Lifecycle Management**: Automated cleanup of old image versions to optimize storage
 
-CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:5000", "app:app"]
-```
+#### **🚀 AWS Runner Deployment**
+- **Automated Deployment**: Seamless deployment to AWS infrastructure using AWS Runner
+- **Infrastructure Management**: Automated provisioning and management of AWS resources
+- **Scalable Deployment**: Leveraging AWS services for scalable and reliable application deployment
+- **Environment Management**: Support for multiple deployment environments (dev, staging, production)
+
+### **LLMOps Implementation**
+This project demonstrates a complete LLMOps (MLOps for LLMs) implementation with:
+- **Model Versioning**: Proper versioning of AI models and embeddings
+- **Pipeline Automation**: End-to-end automation from code commit to production deployment
+- **Security Integration**: Comprehensive security scanning for AI/ML applications
+- **Cloud-native Deployment**: Leveraging AWS services for scalable AI application deployment
 
 ### **Environment Setup**
 - Use environment variables for secrets
@@ -416,11 +449,6 @@ We welcome contributions! Please follow these steps:
 
 ---
 
-## 📄 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 👨‍💻 **Author**
 
@@ -443,26 +471,93 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+## 🚀 **Scope of Improvements**
+
+### **AI/ML Enhancements**
+- **🏥 Medical-Specialized Embeddings**: Integration of `sentence-transformers/embeddinggemma-300m-medical` model
+  - Fine-tuned specifically for medical datasets
+  - Improved accuracy for medical terminology and concepts
+  - Better semantic understanding of medical contexts
+- **🤖 OpenAI API Integration**: Migration from Groq to OpenAI API
+  - Access to GPT-4 and other advanced models
+  - Better medical reasoning capabilities
+  - Enhanced response quality and consistency
+- **🧠 Advanced RAG Techniques**: Implementation of hybrid search and re-ranking
+  - Dense and sparse retrieval combination
+  - Query expansion and reformulation
+  - Context-aware response generation
+
+### **Frontend & UI/UX Overhaul**
+- **⚛️ React.js Frontend**: Complete migration to modern React architecture
+  - Component-based architecture for better maintainability
+  - State management with Redux/Zustand
+  - Server-side rendering (SSR) capabilities
+- **🟢 Node.js Backend**: RESTful API development with Express.js
+  - Microservices architecture
+  - Real-time communication with WebSockets
+  - Advanced middleware and security layers
+- **🎨 Modern UI/UX Design**: Complete design system overhaul
+  - Material-UI or Ant Design component library
+  - Advanced animations and transitions
+  - Progressive Web App (PWA) capabilities
+  - Enhanced accessibility features
+
+### **Infrastructure & DevOps**
+- **🔒 Enhanced Security**: Advanced security implementations
+  - OAuth 2.0 and JWT authentication
+  - Rate limiting and DDoS protection
+  - Data encryption at rest and in transit
+- **📊 Monitoring & Analytics**: Comprehensive observability
+  - Application Performance Monitoring (APM)
+  - User behavior analytics
+  - Real-time health dashboards
+- **🔄 Advanced CI/CD**: Extended pipeline capabilities
+  - Multi-environment deployments
+  - Automated testing and quality gates
+  - Infrastructure as Code (IaC) with Terraform
+
+### **Additional Features**
+- **🌍 Multi-language Support**: Internationalization capabilities
+- **🎤 Voice Interface**: Speech-to-text and text-to-speech integration
+- **📱 Mobile Application**: Native iOS and Android apps
+- **🔍 Advanced Search**: Elasticsearch integration for better search
+- **📈 Analytics Dashboard**: Comprehensive usage and performance metrics
+- **👥 User Management**: Role-based access control and user profiles
+
+---
+
 ## 📈 **Roadmap**
 
-### **Upcoming Features**
+### **Phase 1: AI/ML Improvements** (Q1 2024)
+- [ ] Integrate medical-specialized embedding model
+- [ ] Migrate to OpenAI API
+- [ ] Implement advanced RAG techniques
+- [ ] Enhanced medical knowledge base
+
+### **Phase 2: Frontend Overhaul** (Q2 2024)
+- [ ] React.js frontend development
+- [ ] Node.js backend API
+- [ ] Modern UI/UX design system
+- [ ] Progressive Web App features
+
+### **Phase 3: Advanced Features** (Q3 2024)
 - [ ] Multi-language support
-- [ ] Voice input/output
-- [ ] Medical image analysis
-- [ ] Integration with medical databases
-- [ ] Mobile app development
+- [ ] Voice input/output capabilities
+- [ ] Mobile application development
 - [ ] Advanced analytics dashboard
+
+### **Phase 4: Enterprise Features** (Q4 2024)
 - [ ] User authentication system
-- [ ] Conversation history export
+- [ ] Role-based access control
+- [ ] Advanced security features
+- [ ] Performance monitoring and alerting
 
 ### **Technical Improvements**
 - [ ] Microservices architecture
-- [ ] Kubernetes deployment
 - [ ] Advanced caching strategies
-- [ ] Real-time collaboration
-- [ ] Advanced security features
-- [ ] Performance monitoring
+- [ ] Real-time collaboration features
 - [ ] Automated testing pipeline
+- [ ] Infrastructure as Code (IaC)
 
 ---
 
